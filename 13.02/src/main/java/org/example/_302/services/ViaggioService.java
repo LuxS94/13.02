@@ -25,7 +25,7 @@ public class ViaggioService {
     }
 
     public Viaggio findById(String id) {
-        return this.vr.findById(id).orElseThrow(() -> new NotFoundException("Viaggio non trovato!"));
+        return this.vr.findById(id).orElseThrow(() -> new NotFoundException("Viaggio non trovato!!"));
     }
 
     public Viaggio saveV(ViaggioDTO payload) {

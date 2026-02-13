@@ -49,18 +49,18 @@ public class ViaggioController {
 
 
     @PutMapping("/{id}")
-    public Viaggio getByIdAndUpdate(String id, ViaggioDTO payload) {
+    public Viaggio getByIdAndUpdate(@PathVariable String id, ViaggioDTO payload) {
         return this.vs.findByIdAndUpdate(id, payload);
     }//http://localhost:3001/viaggio/{id}
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteById(String id) {
+    public void deleteById(@PathVariable String id) {
         this.vs.deleteById(id);
     }//http://localhost:3001/viaggio/{id}
 
     @PutMapping("/{id}/stato")
-    public Viaggio setStatoById(String id, Stato stato) {
+    public Viaggio setStatoById(@PathVariable String id, Stato stato) {
         return this.vs.setStato(id, stato);
     }//http://localhost:3001/viaggio/{id}/stato
 }

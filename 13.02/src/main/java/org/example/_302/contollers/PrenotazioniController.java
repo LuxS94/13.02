@@ -29,7 +29,7 @@ public class PrenotazioniController {
 
 
     @GetMapping("/{id}")
-    public Prenotazioni findById(String id) {
+    public Prenotazioni findById(@PathVariable String id) {
         return this.ps.findById(id);
     }//http://localhost:3001/prenotazione/{id}
 
@@ -49,13 +49,13 @@ public class PrenotazioniController {
     }//http://localhost:3001/prenotazione
 
     @PutMapping("/{id}")
-    public Prenotazioni findByIdAndUpload(String id, PrenotazioniDTO payload) {
+    public Prenotazioni findByIdAndUpload(@PathVariable String id, PrenotazioniDTO payload) {
         return this.ps.findByIdandUpdate(id, payload);
     }//http://localhost:3001/prenotazione/{id}
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteById(String id) {
+    public void deleteById(@PathVariable String id) {
         this.ps.deleteById(id);
     }//http://localhost:3001/prenotazione/{id}
 }

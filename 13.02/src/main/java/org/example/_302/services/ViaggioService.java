@@ -1,6 +1,7 @@
 package org.example._302.services;
 
 import org.example._302.DTO.ViaggioDTO;
+import org.example._302.entities.Stato;
 import org.example._302.entities.Viaggio;
 import org.example._302.excepitions.AlreadyExists;
 import org.example._302.excepitions.NotFoundException;
@@ -44,5 +45,12 @@ public class ViaggioService {
 
     public void deleteById(String id) {
         this.vr.deleteById(id);
+    }
+
+    //metodo per cambiare lo stato del viaggio
+    public Viaggio setStato(String id, Stato stato) {
+        Viaggio f = findById(id);
+        f.setStato(stato);
+        return this.vr.save(f);
     }
 }

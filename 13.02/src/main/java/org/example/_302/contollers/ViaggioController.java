@@ -1,6 +1,7 @@
 package org.example._302.contollers;
 
 import org.example._302.DTO.ViaggioDTO;
+import org.example._302.entities.Stato;
 import org.example._302.entities.Viaggio;
 import org.example._302.excepitions.ValidationException;
 import org.example._302.services.ViaggioService;
@@ -58,5 +59,8 @@ public class ViaggioController {
         this.vs.deleteById(id);
     }//http://localhost:3001/viaggio/{id}
 
-
+    @PutMapping("/{id}")
+    public Viaggio setStatoById(String id, Stato stato) {
+        return this.vs.setStato(id, stato);
+    }//http://localhost:3001/viaggio/{id}
 }

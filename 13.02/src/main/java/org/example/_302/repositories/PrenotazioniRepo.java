@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PrenotazioniRepo extends JpaRepository<Prenotazioni, String> {
-    Prenotazioni findByDipAndViag(Dipendente dipendente, Viaggio viaggio);
+    Prenotazioni findByDipendenteAndViaggio(Dipendente dipendente, Viaggio viaggio);
 }

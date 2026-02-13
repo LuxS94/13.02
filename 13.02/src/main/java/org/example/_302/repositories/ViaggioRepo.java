@@ -9,5 +9,5 @@ import java.util.Optional;
 
 @Repository
 public interface ViaggioRepo extends JpaRepository<Viaggio, String> {
-    Optional<Viaggio> findByDataAndDest(LocalDate data, String destinazione);
+    Optional<Viaggio> findByDataAndDestinazione(LocalDate data, String destinazione);
 }

@@ -30,7 +30,7 @@ public class PrenotazioniService {
     }
 
     public Prenotazioni saveP(PrenotazioniDTO payload) {
-        Prenotazioni exist = this.pr.findByDipAndViag(payload.dipendente(), payload.viaggio());
+        Prenotazioni exist = this.pr.findByDipendenteAndViaggio(payload.dipendente(), payload.viaggio());
         if (exist != null) {
             throw new GenericException("L'utente non può prenotare lo stesso viaggio per la stessa data");
         }

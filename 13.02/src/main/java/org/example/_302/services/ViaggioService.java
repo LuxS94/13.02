@@ -29,7 +29,7 @@ public class ViaggioService {
     }
 
     public Viaggio saveV(ViaggioDTO payload) {
-        this.vr.findByDataAndDest(payload.data(), payload.destinazione()).ifPresent(v -> {
+        this.vr.findByDataAndDestinazione(payload.data(), payload.destinazione()).ifPresent(v -> {
             throw new AlreadyExists("Questo viaggio è già registrato!");
         });
         Viaggio nv = new Viaggio(payload.destinazione(), payload.data());

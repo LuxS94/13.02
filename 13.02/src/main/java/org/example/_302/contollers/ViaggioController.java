@@ -59,8 +59,8 @@ public class ViaggioController {
         this.vs.deleteById(id);
     }//http://localhost:3001/viaggio/{id}
 
-    @PutMapping("/{id}")
+    @PutMapping("/{id}/stato")
     public Viaggio setStatoById(String id, Stato stato) {
         return this.vs.setStato(id, stato);
-    }//http://localhost:3001/viaggio/{id}
+    }//http://localhost:3001/viaggio/{id}/stato
 }

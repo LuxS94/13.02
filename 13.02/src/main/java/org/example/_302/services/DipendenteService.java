@@ -31,7 +31,7 @@ public class DipendenteService {
             throw new AlreadyExists("La mail è già utilizzato");
         });
         Dipendente nDip = new Dipendente(payload.username(), payload.nome(), payload.cognome(), payload.email());
-        return nDip;
+        return this.dr.save(nDip);
 
     }
 

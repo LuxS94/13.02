@@ -33,6 +33,9 @@ public class Prenotazioni {
         }
     }
 
+    public LocalDate getData() {
+        return data;
+    }
 
     public String getNote() {
         return note;

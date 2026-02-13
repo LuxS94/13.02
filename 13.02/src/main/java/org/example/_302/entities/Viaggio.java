@@ -14,6 +14,7 @@ public class Viaggio {
     private String destinazione;
     @Column(nullable = false)
     private LocalDate data;
+    @Enumerated(EnumType.STRING)
     private Stato stato;
 
     public Viaggio() {

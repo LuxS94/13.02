@@ -35,13 +35,13 @@ public class DipendenteService {
 
     }
 
-    public Dipendente findByUsername(String username) {
-        return this.dr.findByUsername(username).orElseThrow(() -> new NotFoundException("Dipendente non trovato"));
+    public Dipendente findById(String id) {
+        return this.dr.findById(id).orElseThrow(() -> new NotFoundException("Dipendente non trovato"));
 
     }
 
-    public Dipendente findByUsernameAndUpdate(String username, DipendenteDTO payload) {
-        Dipendente f = findByUsername(username);
+    public Dipendente findByIdAndUpdate(String id, DipendenteDTO payload) {
+        Dipendente f = findById(id);
         f.setUsername(payload.username());
         f.setNome(payload.nome());
         f.setCognome(payload.cognome());
@@ -49,8 +49,8 @@ public class DipendenteService {
         return this.dr.save(f);
     }
 
-    public void DeleteByUsername(String username) {
-        Dipendente f = findByUsername(username);
+    public void DeleteById(String id) {
+        Dipendente f = findById(id);
         this.dr.delete(f);
     }
 }

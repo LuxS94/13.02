@@ -1,14 +1,14 @@
 package org.example._302.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Dipendenti")
 public class Dipendente {
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
+    @Column(nullable = false)
     private String username;
     @Column(nullable = false)
     private String nome;
@@ -23,6 +23,7 @@ public class Dipendente {
     ;
 
     public Dipendente(String username, String nome, String cognome, String email) {
+        this.id = id;
         this.username = username;
         this.nome = nome;
         this.cognome = cognome;

@@ -29,8 +29,8 @@ public class DipendenteController {
 
 
     @GetMapping("/{username}")
-    public Dipendente findByUsername(@PathVariable String username) {
-        return this.ds.findByUsername(username);
+    public Dipendente findById(@PathVariable String username) {
+        return this.ds.findById(username);
     }//http://localhost:3001/dipendente/{username}
 
 
@@ -49,14 +49,14 @@ public class DipendenteController {
     }//http://localhost:3001/dipendente
 
     @PutMapping("/{username}")
-    public Dipendente findByUsernameAndUpdate(@PathVariable String username, DipendenteDTO payload) {
-        return this.findByUsernameAndUpdate(username, payload);
+    public Dipendente findByUsernaAndUpdate(@PathVariable String username, @RequestBody @Validated DipendenteDTO payload) {
+        return this.ds.findByIdAndUpdate(username, payload);
     }//http://localhost:3001/dipendente/{username}
 
 
     @DeleteMapping("/{username}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteByUsername(@PathVariable String username) {
-        this.ds.DeleteByUsername(username);
+    public void deleteById(@PathVariable String username) {
+        this.ds.DeleteById(username);
     }//http://localhost:3001/dipendente/{username}
 }

@@ -49,7 +49,7 @@ public class PrenotazioniController {
     }//http://localhost:3001/prenotazione
 
     @PutMapping("/{id}")
-    public Prenotazioni findByIdAndUpload(@PathVariable String id, PrenotazioniDTO payload) {
+    public Prenotazioni findByIdAndUpload(@PathVariable String id, @RequestBody @Validated PrenotazioniDTO payload) {
         return this.ps.findByIdandUpdate(id, payload);
     }//http://localhost:3001/prenotazione/{id}
 

@@ -49,7 +49,7 @@ public class ViaggioController {
 
 
     @PutMapping("/{id}")
-    public Viaggio getByIdAndUpdate(@PathVariable String id, ViaggioDTO payload) {
+    public Viaggio getByIdAndUpdate(@PathVariable String id, @RequestBody @Validated ViaggioDTO payload) {
         return this.vs.findByIdAndUpdate(id, payload);
     }//http://localhost:3001/viaggio/{id}
 

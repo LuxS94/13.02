@@ -5,5 +5,5 @@ import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDate;
 
-public record ViaggioDTO(@NotBlank @NotNull String destinazione, @NotBlank @NotNull LocalDate data) {
+public record ViaggioDTO(@NotBlank @NotNull String destinazione, @NotNull LocalDate data) {
 }

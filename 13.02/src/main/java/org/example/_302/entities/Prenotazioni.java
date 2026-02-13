@@ -14,7 +14,7 @@ public class Prenotazioni {
     @ManyToOne
     @JoinColumn
     private Dipendente dipendente;
-    @OneToOne
+    @ManyToOne
     @JoinColumn
     private Viaggio viaggio;
     private LocalDate data;

@@ -2,6 +2,8 @@ package org.example._302.entities;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+
 @Entity
 @Table(name = "Prenotazioni")
 public class Prenotazioni {
@@ -15,6 +17,7 @@ public class Prenotazioni {
     @OneToOne
     @JoinColumn
     private Viaggio viaggio;
+    private LocalDate data;
 
     public Prenotazioni() {
     }
@@ -22,9 +25,14 @@ public class Prenotazioni {
     ;
 
     public Prenotazioni(String note, Dipendente dipendente, Viaggio viaggio) {
+        this.note = note;
         this.dipendente = dipendente;
-        this.viaggio = viaggio;
+        this.setViaggio(viaggio);
+        if (viaggio != null) {
+            this.data = viaggio.getData();
+        }
     }
+
 
     public String getNote() {
         return note;
